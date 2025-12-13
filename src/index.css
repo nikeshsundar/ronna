@@ -1,0 +1,158 @@
+:root {
+  /* Colors - SpaceX Monochrome */
+  --bg-dark: #000000;
+  --bg-card: rgba(255, 255, 255, 0.05);
+  /* Subtle glass */
+  --bg-card-hover: rgba(255, 255, 255, 0.1);
+
+  /* Typography */
+  --font-heading: 'Barlow', sans-serif;
+  --font-body: 'Inter', system-ui, -apple-system, sans-serif;
+
+  --text-main: #ffffff;
+  --text-muted: #cccccccc;
+  /* 80% opacity white */
+
+  /* Primary Action */
+  --primary: #ffffff;
+  --primary-transparent: rgba(255, 255, 255, 0.1);
+
+  /* Spacing */
+  --container-width: 1400px;
+  /* Wider container for cinematic look */
+  --section-padding: 100px 20px;
+
+  /* Interface */
+  --glass-bg: rgba(0, 0, 0, 0.7);
+  --glass-border: 1px solid rgba(255, 255, 255, 0.15);
+  --glass-blur: blur(20px);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--bg-dark);
+  color: var(--text-main);
+  line-height: 1.6;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: opacity 0.3s ease;
+}
+
+a:hover {
+  opacity: 0.7;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-heading);
+  line-height: 1.1;
+  font-weight: 700;
+  text-transform: uppercase;
+  /* Distinctive SpaceX style */
+  letter-spacing: 0.5px;
+}
+
+.container {
+  max-width: var(--container-width);
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+/* Utilities */
+.uppercase {
+  text-transform: uppercase;
+}
+
+.font-barlow {
+  font-family: var(--font-heading);
+}
+
+.text-muted {
+  color: var(--text-muted);
+}
+
+/* Button - SpaceX Style */
+.btn {
+  display: inline-block;
+  padding: 16px 40px;
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  border: 2px solid white;
+  background: transparent;
+  color: white;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.btn:hover {
+  background: white;
+  color: black;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: black;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #333;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/* Section Defaults */
+section {
+  position: relative;
+  width: 100%;
+}
+
+/* Animations - Added for Mission Section */
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fade-in 1s ease-out forwards;
+}
